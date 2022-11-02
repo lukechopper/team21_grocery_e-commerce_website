@@ -22,7 +22,7 @@
                         </div>
                 </div> 
                 <a href="#contact">Contact Us</a>
-                <a href="#signin">Sign In</a>
+                <a href="Signup.blade.php">Sign In</a>
                 <a href="#register">Register</a>
             </div>
         </div>
