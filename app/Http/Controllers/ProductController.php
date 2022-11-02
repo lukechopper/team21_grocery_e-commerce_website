@@ -15,7 +15,7 @@ class ProductController extends Controller
             //     'description' => 'In a rich tomato sauce. At least 25% less salt than standard Heinz baked beans. No Artificial Sweeteners. No Added Sugar - Contains naturally occurring sugars.',
             //     'price' => '£2.00',
             //     'categories' => 'Tinned Food',
-            //     'url' => 'https://ui.assets-asda.com/dm/asdagroceries/5000157078766_T1?defaultImage=asdagroceries/noImage&resMode=sharp2&id=CE2r60&fmt=jpg&dpr=off&fit=constrain,1&wid=288&hei=288'
+            //     'url' => 'https://assets.sainsburys-groceries.co.uk/gol/7173123/1/640x640.jpg'
             // ]);
         }catch(QueryException $exception){
             dd('Fail!');
