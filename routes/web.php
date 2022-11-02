@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('teamprojectdraft');
 });
 
 Route::get('/dummy-data', [ProductController::class, 'addDummyData']);
