@@ -20,13 +20,13 @@
                             <a href="#">Food Cupboard</a>
                             <a href="#">Drinks</a>
                         </div>
-                </div> 
+                </div>
                 <a href="#contact">Contact Us</a>
                 <a href="Signup.blade.php">Sign In</a>
                 <a href="#register">Register</a>
             </div>
         </div>
-          
+
     </div>
 
     <div class="container">

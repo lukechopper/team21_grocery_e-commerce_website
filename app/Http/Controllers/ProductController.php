@@ -10,6 +10,8 @@ class ProductController extends Controller
 {
     public function addDummyData(){
         try{
+            $found = Product::find(1);
+            dd($found->name);
             // Product::create([
             //     'name' => 'Heinz No Added Sugar Beanz in Tomato Sauce',
             //     'description' => 'In a rich tomato sauce. At least 25% less salt than standard Heinz baked beans. No Artificial Sweeteners. No Added Sugar - Contains naturally occurring sugars.',
@@ -18,7 +20,7 @@ class ProductController extends Controller
             //     'url' => 'https://assets.sainsburys-groceries.co.uk/gol/7173123/1/640x640.jpg'
             // ]);
         }catch(QueryException $exception){
-            dd('Fail!');
+            dd($exception);
         }
 
         dd('Success!');
