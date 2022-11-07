@@ -16,6 +16,10 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', function () {
     return view('teamprojectdraft');
-});
+})->name('home');
+
+Route::get('/signup', function () {
+    return view('Signup');
+})->name('signup');
 
 Route::get('/dummy-data', [ProductController::class, 'addDummyData']);

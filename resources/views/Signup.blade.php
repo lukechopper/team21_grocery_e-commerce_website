@@ -1,14 +1,16 @@
-<html lang="en">
-<head>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Title of the website-->
-  <title>Sign Up</title>
+@extends('partials.header')
+
+@section('title')
+<title>PureFoods | Sign Up</title>
+@endsection('title')
+
+@section('css')
    <!--all the links for style sheets custom and ready made bootstrap-->
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  <link rel="stylesheet" href="css/style.css">
-</head>
+@endsection
 
+@section('body')
 <body>
 <div class="form_width">
       <!--
@@ -29,7 +31,7 @@ the POST method submits form data to itself
 
    <label for="confirm_pwd"><b>Confirm Password:</b></label>
   <input type="password" placeholder="Confirm password" id="confirm_pwd" name="confirm_pwd" required>
-      
+
     <label for="phone"><b>Phone Number:</b></label>
       <input type="text" placeholder="Phone number" name="phone" required>
 
@@ -39,3 +41,4 @@ the POST method submits form data to itself
 </div>
 </body>
 </html>
+@endsection

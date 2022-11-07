@@ -1,34 +1,11 @@
-<!DOCTYPE html>
-<html lang = "en">
-<head>
-    <meta charset="UTF-8">
-    <title>PureFoods | Groceries</title>
-    <link rel="stylesheet" href="{{asset('css/TPdraft.css')}}">
-</head>
+@extends('partials.header')
+
+@section('title')
+<title>PureFoods | Homepage</title>
+@endsection('title')
+
+@section('body')
 <body>
-    <div class="navbar">
-            <img class = "pf" src = "PFlogo.png" width="205px">
-        <div class = "navsection">
-            <div class="navbar">
-                <a href="#home">Home</a>
-                <div class="dropdown">
-                    <button class="dropbtn">Shop</button>
-                        <div class="dropdown-content">
-                            <a href="#">Fruit and veg</a>
-                            <a href="#">Frozen</a>
-                            <a href="#">Bakery</a>
-                            <a href="#">Food Cupboard</a>
-                            <a href="#">Drinks</a>
-                        </div>
-                </div>
-                <a href="#contact">Contact Us</a>
-                <a href="Signup.blade.php">Sign In</a>
-                <a href="#register">Register</a>
-            </div>
-        </div>
-
-    </div>
-
     <div class="container">
       <div class="row">
         <div class = "col-2">
@@ -43,3 +20,4 @@
 </body>
 
 </html>
+@endsection

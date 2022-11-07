@@ -45,12 +45,17 @@
     background-color: #8ec44c;
   }
 
+  #image-link{
+    background-color: transparent;
+    padding: 0px;
+  }
+
   .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    transform: translateX(-80px);
+    transform: translateX(-90px);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
