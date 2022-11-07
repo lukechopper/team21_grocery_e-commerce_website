@@ -7,6 +7,7 @@
 
 .navbar {
     overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
     background-color: rgb(246, 251, 245);
   }
 
@@ -25,7 +26,7 @@
   }
 
   .dropdown {
-    float: right;
+    float: left;
     overflow: hidden;
   }
 
@@ -45,7 +46,7 @@
     background-color: #8ec44c;
   }
 
-  #image-link{
+ #navbar__image{
     background-color: transparent;
     padding: 0px;
   }
@@ -55,7 +56,7 @@
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
-    transform: translateX(-90px);
+    transform: translateX(-95px);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }

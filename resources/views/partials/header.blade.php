@@ -13,10 +13,15 @@
 </head>
 <header>
 <div class="navbar">
-    <a href="{{route('home')}}" id="image-link"><img class = "pf" src = "PFlogo.png" width="205px"></a>
+    <a href="{{route('home')}}" id="navbar__image"><img class = "pf" src = "PFlogo.png" width="205px"></a>
     <div class = "navsection">
         <div class="navbar">
             <a href="{{route('home')}}">Home</a>
+            <a href="#contact">Contact Us</a>
+            @guest
+            <a href="Signup.blade.php">Sign In</a>
+            <a href="{{route('signup')}}">Sign Up</a>
+            @endguest
             <div class="dropdown">
                 <button class="dropbtn">Shop</button>
                     <div class="dropdown-content">
@@ -27,11 +32,6 @@
                         <a href="#">Drinks</a>
                     </div>
             </div>
-            <a href="#contact">Contact Us</a>
-            @guest
-            <a href="Signup.blade.php">Sign In</a>
-            <a href="{{route('signup')}}">Sign Up</a>
-            @endguest
         </div>
     </div>
 </div>
