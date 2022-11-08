@@ -12,24 +12,24 @@
     @endif
 </head>
 <header>
-<div class="navbar">
-    <a href="{{route('home')}}" id="navbar__image"><img class = "pf" src = "PFlogo.png" width="205px"></a>
-    <div class = "navsection">
-        <div class="navbar">
-            <a href="{{route('home')}}">Home</a>
-            <a href="#contact">Contact Us</a>
+<div class="navbar__itself">
+    <a href="{{route('home')}}" class="navbar__image"><img class = "pf" src = "PFlogo.png" width="205px"></a>
+    <div class = "navbar__navsection">
+        <div class="navbar__itself">
+            <a href="{{route('home')}}" class="navbar__link">Home</a>
+            <a href="#contact" class="navbar__link">Contact Us</a>
             @guest
-            <a href="Signup.blade.php">Sign In</a>
-            <a href="{{route('signup')}}">Sign Up</a>
+            <a href="Signup.blade.php" class="navbar__link">Sign In</a>
+            <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
             @endguest
-            <div class="dropdown">
-                <button class="dropbtn">Shop</button>
-                    <div class="dropdown-content">
-                        <a href="#">Fruit and veg</a>
-                        <a href="#">Frozen</a>
-                        <a href="#">Bakery</a>
-                        <a href="#">Food Cupboard</a>
-                        <a href="#">Drinks</a>
+            <div class="navbar__dropdown">
+                <button class="navbar__dropbtn">Shop</button>
+                    <div class="navbar__dropdown-content">
+                        <a href="#" class="navbar__link navbar__link--dropdown">Fruit and veg</a>
+                        <a href="#" class="navbar__link navbar__link--dropdown">Frozen</a>
+                        <a href="#" class="navbar__link navbar__link--dropdown">Bakery</a>
+                        <a href="#" class="navbar__link navbar__link--dropdown">Food Cupboard</a>
+                        <a href="#" class="navbar__link navbar__link--dropdown">Drinks</a>
                     </div>
             </div>
         </div>

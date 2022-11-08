@@ -8,6 +8,12 @@ use Illuminate\Database\QueryException;
 
 class ProductController extends Controller
 {
+
+    public function returnHomeView(){
+        return view('teamprojectdraft', ['products' => Product::all()]);
+    }
+
+
     public function addDummyData(){
         try{
             $found = Product::find(1);

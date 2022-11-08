@@ -1,3 +1,10 @@
+*{
+    line-height: 1.2;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .container {
     max-width: 1300px;
     margin: auto;
@@ -5,33 +12,33 @@
     padding-right: 25px;
 }
 
-.navbar {
+.navbar__itself {
     overflow: hidden;
     font-family: 'Times New Roman', Times, serif;
     background-color: rgb(246, 251, 245);
   }
 
-  .navbar a {
+  .navbar__link {
     float: left;
     font-size: 16px;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0) !important;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-decoration: none !important;
   }
 
-  .navsection {
+  .navbar__navsection {
     float: right;
     overflow: hidden;
   }
 
-  .dropdown {
+  .navbar__dropdown {
     float: left;
     overflow: hidden;
   }
 
 
-  .dropdown .dropbtn {
+  .navbar__dropbtn {
     font-size: 16px;
     border: none;
     outline: none;
@@ -42,16 +49,16 @@
     margin: 0;
   }
 
-  .navbar a:hover, .dropdown:hover .dropbtn {
+  .navbar__link:hover, .navbar__dropdown:hover .navbar__dropbtn {
     background-color: #8ec44c;
   }
 
- #navbar__image{
+ .navbar__image{
     background-color: transparent;
     padding: 0px;
   }
 
-  .dropdown-content {
+  .navbar__dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -61,7 +68,7 @@
     z-index: 1;
   }
 
-  .dropdown-content a {
+  .navbar__link.navbar__link--dropdown {
     float: none;
     color: black;
     padding: 12px 16px;
@@ -70,27 +77,27 @@
     text-align: left;
   }
 
-  .dropdown-content a:hover {
+  .navbar__link.navbar__link--dropdown:hover {
     background-color: #ddd;
   }
 
-  .dropdown:hover .dropdown-content {
+  .navbar__dropdown:hover .navbar__dropdown-content {
     display: block;
   }
 
-.row {
+.navbar__row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
 }
 
-.col-2 {
+.navbar__col-2 {
     flex-basis: 50%;
     min-width: 300px;
 }
 
-.col-2 img {
+.navbar__col-2 img {
     max-width: 100%;
     padding: 50px;
 }
