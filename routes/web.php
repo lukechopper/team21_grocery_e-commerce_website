@@ -16,6 +16,8 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', [ProductController::class, 'returnHomeView'])->name('home');
 
+Route::get('/{category}', [ProductController::class, 'returnCategories'])->name('filterHome');
+
 Route::get('/product/{id}', [ProductController::class, 'viewProduct'])->name('viewProduct');
 
 Route::get('/signup', function () {

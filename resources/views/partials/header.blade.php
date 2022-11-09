@@ -25,11 +25,11 @@
             <div class="navbar__dropdown">
                 <button class="navbar__dropbtn">Shop</button>
                     <div class="navbar__dropdown-content">
-                        <a href="#" class="navbar__link navbar__link--dropdown">Fruit and veg</a>
-                        <a href="#" class="navbar__link navbar__link--dropdown">Frozen</a>
-                        <a href="#" class="navbar__link navbar__link--dropdown">Bakery</a>
-                        <a href="#" class="navbar__link navbar__link--dropdown">Food Cupboard</a>
-                        <a href="#" class="navbar__link navbar__link--dropdown">Drinks</a>
+                        <a href="{{route('filterHome', 'Frozen Food')}}" class="navbar__link navbar__link--dropdown">Frozen Food</a>
+                        <a href="{{route('filterHome', 'Fruit and Veg')}}" class="navbar__link navbar__link--dropdown">Fruit and Veg</a>
+                        <a href="{{route('filterHome', 'Chilled Food')}}" class="navbar__link navbar__link--dropdown">Chilled Food</a>
+                        <a href="{{route('filterHome', 'Tinned Food')}}" class="navbar__link navbar__link--dropdown">Tinned Food</a>
+                        <a href="{{route('filterHome', 'Drinks')}}" class="navbar__link navbar__link--dropdown">Drinks</a>
                     </div>
             </div>
         </div>

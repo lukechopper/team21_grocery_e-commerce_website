@@ -13,6 +13,11 @@ class ProductController extends Controller
         return view('teamprojectdraft', ['products' => Product::all()]);
     }
 
+    public function returnCategories($category){
+        $foundProducts = Product::where('categories', $category)->get();
+        return view('teamprojectdraft', ['products' => $foundProducts]);
+    }
+
     public function viewProduct($id){
         $foundProduct = Product::find($id);
         if(!$foundProduct){
