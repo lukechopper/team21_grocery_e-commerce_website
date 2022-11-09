@@ -13,7 +13,7 @@
 </head>
 <header>
 <div class="navbar__itself">
-    <a href="{{route('home')}}" class="navbar__image"><img class = "pf" src = "PFlogo.png" width="205px"></a>
+    <a href="{{route('home')}}" class="navbar__image"><img class = "pf" src = "{{asset('PFlogo.png')}}" width="205px"></a>
     <div class = "navbar__navsection">
         <div class="navbar__itself">
             <a href="{{route('home')}}" class="navbar__link">Home</a>

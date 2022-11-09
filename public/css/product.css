@@ -1,0 +1,12 @@
+.card.card--no_border{
+    border: none;
+}
+
+.product-image{
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}

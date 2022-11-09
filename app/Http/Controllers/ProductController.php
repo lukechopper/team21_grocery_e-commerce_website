@@ -13,6 +13,14 @@ class ProductController extends Controller
         return view('teamprojectdraft', ['products' => Product::all()]);
     }
 
+    public function viewProduct($id){
+        $foundProduct = Product::find($id);
+        if(!$foundProduct){
+            return redirect()->route('home');
+        }
+
+        return view('product', ['product' => $foundProduct]);
+    }
 
     public function addDummyData(){
         try{
