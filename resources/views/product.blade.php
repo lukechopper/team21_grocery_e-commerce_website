@@ -22,7 +22,7 @@
         </div>
         @guest
         <div class="alert alert-secondary" role="alert">
-            Please Log In to be able to buy this.
+            Please <a href="{{route('login')}}" class="alert-link">Log In</a> to be able to buy this.
         </div>
         @endguest
         @auth

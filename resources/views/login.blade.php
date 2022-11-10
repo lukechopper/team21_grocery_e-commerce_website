@@ -13,6 +13,12 @@
 
 <body>
     <div class="container">
+        @if(session('success'))
+        <div class="alert alert-success mt-2" role="alert">
+            <p>Success. You are now logged in!</p>
+            <p class="mb-0">Click <a href="{{route('home')}}" class="alert-link">here</a> to go back to the homepage.</p>
+        </div>
+        @else
         <h1>Login</h1>
         <p class="lead">Login to a registered account</p>
         @if(session('error'))
@@ -48,6 +54,7 @@
                 </div>
             </div>
         </form>
+    @endif
     </div>
 </body>
 
