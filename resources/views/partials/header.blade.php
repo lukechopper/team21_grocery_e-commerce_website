@@ -23,6 +23,9 @@
             <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
             @endguest
             @auth
+            @if(auth()->user()->isAdmin)
+            <a href="#" class="navbar__link">Admin Info</a>
+            @endif
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth
             <div class="navbar__dropdown">
