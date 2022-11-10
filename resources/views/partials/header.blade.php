@@ -19,9 +19,12 @@
             <a href="{{route('home')}}" class="navbar__link">Home</a>
             <a href="#contact" class="navbar__link">Contact Us</a>
             @guest
-            <a href="Signup.blade.php" class="navbar__link">Sign In</a>
+            <a href="{{route('login')}}" class="navbar__link">Sign In</a>
             <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
             @endguest
+            @auth
+            <a href="#" class="navbar__link">Logout</a>
+            @endauth
             <div class="navbar__dropdown">
                 <button class="navbar__dropbtn">Shop</button>
                     <div class="navbar__dropdown-content">

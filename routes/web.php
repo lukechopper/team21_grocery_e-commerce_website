@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,10 @@ Route::get('/product/{id}', [ProductController::class, 'viewProduct'])->name('vi
 
 Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder');
 
-Route::get('/signup', function () {
-    return view('Signup');
-})->name('signup');
+Route::get('/login', [UserController::class, 'accessLogin'])->name('login');
+
+Route::get('/signup', [UserController::class, 'accessSignup'])->name('signup');
+
+Route::post('/register', [UserController::class, 'signup'])->name('register')->middleware('guest');
 
 Route::get('/dummy-data', [ProductController::class, 'addDummyData']);
