@@ -12,7 +12,7 @@
       <div class="row justify-content-center">
         <div class="col-auto">
             <div class="card card--no_border">
-                <img src="{{$product->url}}" class="product-image"/>
+                <img src="{{$product->url}}" class="card__product_image"/>
                 <div class="card-body">
                     <h5 class="card-title">{{$product->name}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$product->price}} – {{$product->categories}}</h6>
@@ -25,9 +25,32 @@
             Please Log In to be able to buy this.
         </div>
         @endguest
+        @auth
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+            <form action="{{route('makeOrder')}}" method="post">
+                @csrf
+            <input type="hidden" name="total" id="hidden_total" />
+            <div class="form-group">
+                    <label for="display_amount">Total</label>
+                    <h5 id="display_amount">{{$product->price}}</h5>
+                </div>
+                <div class="form-group">
+                    <label for="amount_number">Amount</label>
+                    <input type="number" name="amount" class="form-control" id="amount_number" min="1" value="1" />
+                </div>
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </form>
+            </div>
+        </div>
+        @endauth
       </div>
     </div>
 </body>
 
 </html>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="{{asset('scripts/product.js')}}"></script>
 @endsection

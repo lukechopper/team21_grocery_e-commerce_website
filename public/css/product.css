@@ -2,7 +2,7 @@
     border: none;
 }
 
-.product-image{
+.card__product_image{
     width: 100%;
     height: 100%;
     max-width: 400px;

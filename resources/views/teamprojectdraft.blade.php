@@ -23,10 +23,10 @@
         @endif
         <div class="col-md-4 product-image__column" >
             <div class="card card--no_border">
-            <a href="{{route('viewProduct',$products[$i]->id)}}" class="inline-link"><img src="{{$products[$i]->url}}" class="product-image card-img-top"/></a>
+            <a href="{{route('viewProduct',$products[$i]->id)}}" class="inline-link"><img src="{{$products[$i]->url}}" class="card__product_image card-img-top"/></a>
                 <div class="card-body">
                     <a href="{{route('viewProduct',$products[$i]->id)}}" class="inline-link">
-                    <h4 class="card-title card-title--extra_height">{{$products[$i]->name}}</h4>
+                    <h4 class="card__title card__title--extra_height">{{$products[$i]->name}}</h4>
                     </a>
                     <p class="card-text">{{$products[$i]->price}} – {{$products[$i]->categories}}</p>
                 </div>

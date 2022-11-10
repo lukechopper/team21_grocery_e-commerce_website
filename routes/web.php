@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', [ProductController::class, 'returnHomeView'])->name('home');
 Route::get('/filter/{category}', [ProductController::class, 'returnCategories'])->name('filterHome');
 
 Route::get('/product/{id}', [ProductController::class, 'viewProduct'])->name('viewProduct');
+
+Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder');
 
 Route::get('/signup', function () {
     return view('Signup');
