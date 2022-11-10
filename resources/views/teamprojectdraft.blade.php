@@ -37,7 +37,9 @@
         @endif
       @endfor
       @else
-      <h1>Sorry. No products can be found</h1>
+        <div class="alert alert-danger mt-2" role="alert">
+        Sorry. No products could be found.
+        </div>
       @endif
     </div>
 </body>
