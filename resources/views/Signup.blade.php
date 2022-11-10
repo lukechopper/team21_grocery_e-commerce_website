@@ -61,10 +61,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-xl-auto mt-2">
-                    <button type="submit" class="btn btn-success btn-block w-100">Submit</button>
-                </div>
-                <div class="col-12 col-xl-auto mt-2">
-                    <button type="submit" class="btn btn-danger btn-block w-100">Cancel</button>
+                    <button type="submit" class="btn btn-success btn-block w-100">Register</button>
                 </div>
             </div>
         </form>

@@ -28,6 +28,10 @@ Route::get('/login', [UserController::class, 'accessLogin'])->name('login');
 
 Route::get('/signup', [UserController::class, 'accessSignup'])->name('signup');
 
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
 Route::post('/register', [UserController::class, 'signup'])->name('register')->middleware('guest');
 
-Route::get('/dummy-data', [ProductController::class, 'addDummyData']);
+Route::post('/create-account', [UserController::class, 'login'])->name('createAccount')->middleware('guest');
+
+//Route::get('/dummy-data', [ProductController::class, 'addDummyData']);

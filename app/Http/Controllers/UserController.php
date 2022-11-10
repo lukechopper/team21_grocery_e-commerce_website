@@ -62,4 +62,26 @@ class UserController extends Controller
 
         return back()->with('success', 'true');
     }
+
+    public function login(Request $request){
+        if(!$request->isMethod('post')){
+            return redirect()->route('home');
+        }
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if(!auth()->attempt($request->only('email', 'password'), $request->remember)){
+            return back()->with('error', 'true')->with('email', $request->email);
+        }
+        return back()->with('success', 'true');
+    }
+
+    public function logout(){
+        if(!auth()->user()){
+            return redirect()->route('home');
+        }
+        auth()->logout();
+        return view('logout');
+    }
 }

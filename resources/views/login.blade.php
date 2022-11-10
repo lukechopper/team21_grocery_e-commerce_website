@@ -15,6 +15,39 @@
     <div class="container">
         <h1>Login</h1>
         <p class="lead">Login to a registered account</p>
+        @if(session('error'))
+        <div class="alert alert-danger" role="alert">Wrong account details. Try again.</div>
+        @endif
+        <form action="{{route('createAccount')}}" method="post">
+            @csrf
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="@if(!empty(old('email'))){{old('email')}}@else{{session('email')}}@endif" />
+                @error('email')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" />
+                @error('password')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="remember" id="remember">
+                <label class="form-check-label" for="remember">Remember me: </label>
+            </div>
+            <div class="row">
+                <div class="col-12 col-xl-auto mt-2">
+                    <button type="submit" class="btn btn-success btn-block w-100">Login</button>
+                </div>
+            </div>
+        </form>
     </div>
 </body>
 

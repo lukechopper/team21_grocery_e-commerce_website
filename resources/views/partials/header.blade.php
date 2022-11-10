@@ -23,7 +23,7 @@
             <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
             @endguest
             @auth
-            <a href="#" class="navbar__link">Logout</a>
+            <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth
             <div class="navbar__dropdown">
                 <button class="navbar__dropbtn">Shop</button>
