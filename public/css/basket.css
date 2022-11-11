@@ -3,6 +3,11 @@
     border-radius: 5px;
     padding: 10px;
 }
+@media(max-width: 767px){
+    .medium_margin_top{
+        margin-top: 1rem !important;
+    }
+}
 .media__image{
     max-width: 100%;
     height: auto;

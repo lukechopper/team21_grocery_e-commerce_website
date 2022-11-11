@@ -28,6 +28,8 @@ Route::post('/delete-from-basket', [OrderController::class, 'deleteFromBasket'])
 
 Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder')->middleware('auth');
 
+Route::post('/purchase', [OrderController::class, 'makePurchase'])->name('makePurchase')->middleware('auth');
+
 Route::get('/login', [UserController::class, 'accessLogin'])->name('login');
 
 Route::get('/signup', [UserController::class, 'accessSignup'])->name('signup');

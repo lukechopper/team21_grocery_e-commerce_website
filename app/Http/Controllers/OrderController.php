@@ -9,8 +9,8 @@ use Illuminate\Database\QueryException;
 
 class OrderController extends Controller
 {
-    //
 
+    //NOT DIRECTLY RELATED TO ANY ROUTES
     public function getOrdersCurrentlyInBasket(){
         $userOrders = auth()->user()->orders;
         $ordersCurrentlyInBasket = array();
@@ -65,5 +65,20 @@ class OrderController extends Controller
         return back()->with('success', 'true');
         // $current_date_time = Carbon::now()->toDateTimeString();
         // dd($current_date_time);
+    }
+
+    public function makePurchase(Request $request){
+        if(!$request->isMethod('post')){
+            return redirect()->route('home');
+        }
+
+        $request->validate([
+            'first_name' => 'required|alpha',
+            'last_name' => 'required|alpha',
+            'address' => 'required|alpha_num',
+            'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+        ]);
+
+        dd('TEST');
     }
 }
