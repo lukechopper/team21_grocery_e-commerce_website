@@ -6,6 +6,16 @@ $returnTotal += (float)$bOrder->price;
 }
 return number_format((float)$returnTotal, 2, '.', '');
 }
+
+function turnOrderIdsIntoString($bOrders){
+$returnString = '';
+for($i=0;$i < count($bOrders);$i++){ $bOrder=$bOrders[$i]; if($i===0){ $returnString .=$bOrder->id;
+}else{
+$returnString .= ', ' . $bOrder->id;
+}
+}
+return $returnString;
+}
 @endphp
 
 @extends('partials.header')
@@ -24,6 +34,17 @@ return number_format((float)$returnTotal, 2, '.', '');
 
 <body>
     <div class="container">
+        @if(session('success'))
+        <div class="alert alert-success mt-2" role="alert">
+            <p>Success. You have made the purchase!</p>
+            <p class="mb-0">Click <a href="{{route('home')}}" class="alert-link">here</a> to go back to the homepage.</p>
+        </div>
+        @elseif(session('error'))
+        <div class="alert alert-danger mt-2" role="alert">
+            <p>Error. Something went wrong!</p>
+            <p class="mb-0">Click <a href="{{route('viewBasket')}}" class="alert-link">here</a> to try again.</p>
+        </div>
+        @else
         <h1>Basket</h1>
         <div class="gray__border">
             @foreach($bOrders as $bOrder)
@@ -44,6 +65,7 @@ return number_format((float)$returnTotal, 2, '.', '');
         <h1 class="mt-2">Purchase</h1>
         <form action="{{route('makePurchase')}}" method="post" class="mt-3">
             @csrf
+            <input type="hidden" name="order_ids" value="{{turnOrderIdsIntoString($bOrders)}}" />
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label for="first_name" class="form-label">First Name:</label>
@@ -90,6 +112,7 @@ return number_format((float)$returnTotal, 2, '.', '');
                 </div>
             </div>
         </form>
+        @endif
     </div>
 </body>
 

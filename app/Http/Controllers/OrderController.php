@@ -79,6 +79,8 @@ class OrderController extends Controller
             'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
         ]);
 
-        dd($request->phone_number);
+        $indivOrderIds = explode(",", $request->order_ids);
+
+        dd(count($indivOrderIds));
     }
 }

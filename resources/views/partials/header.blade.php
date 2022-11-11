@@ -6,6 +6,14 @@ function checkThatOrdersHaveNotAlreadyBeenPurchased($userOrders){
     }
     return $canFindUnorderedPurchase;
 }
+
+function checkThatHavePurchasedInThePast($userOrders){
+    $canFindUnorderedPurchase = false;
+    foreach($userOrders as $order){
+        if(isset($order->whenPurchased)){$canFindUnorderedPurchase = true; }
+    }
+    return $canFindUnorderedPurchase;
+}
 @endphp
 
 <!DOCTYPE html>
@@ -39,6 +47,9 @@ function checkThatOrdersHaveNotAlreadyBeenPurchased($userOrders){
             @endif
             @if(checkThatOrdersHaveNotAlreadyBeenPurchased(auth()->user()->orders))
             <a href="{{route('viewBasket')}}" class="navbar__link">Basket</a>
+            @endif
+            @if(checkThatHavePurchasedInThePast(auth()->user()->orders))
+            <a href="#" class="navbar__link">Past Orders</a>
             @endif
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth
