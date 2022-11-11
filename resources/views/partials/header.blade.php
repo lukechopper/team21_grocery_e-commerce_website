@@ -1,3 +1,13 @@
+@php
+function checkThatOrdersHaveNotAlreadyBeenPurchased($userOrders){
+    $canFindUnorderedPurchase = false;
+    foreach($userOrders as $order){
+        if(!isset($order->whenPurchased)){$canFindUnorderedPurchase = true; }
+    }
+    return $canFindUnorderedPurchase;
+}
+@endphp
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -26,6 +36,9 @@
             @auth
             @if(auth()->user()->isAdmin)
             <a href="#" class="navbar__link">Admin Info</a>
+            @endif
+            @if(checkThatOrdersHaveNotAlreadyBeenPurchased(auth()->user()->orders))
+            <a href="#" class="navbar__link">Basket</a>
             @endif
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth
