@@ -75,10 +75,10 @@ class OrderController extends Controller
         $request->validate([
             'first_name' => 'required|alpha',
             'last_name' => 'required|alpha',
-            'address' => 'required|alpha_num',
+            'address' => 'required|regex:/(^[a-zA-Z0-9 ]+$)+/i',
             'phone_number' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
         ]);
 
-        dd('TEST');
+        dd($request->phone_number);
     }
 }
