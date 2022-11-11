@@ -11,6 +11,10 @@ class OrderController extends Controller
 {
     //
 
+    public function viewBasket(){
+        dd('Basket');
+    }
+
     public function makeOrder(Request $request){
         if(!$request->isMethod('post')){
             return redirect()->route('home');

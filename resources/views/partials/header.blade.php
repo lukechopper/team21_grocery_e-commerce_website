@@ -38,7 +38,7 @@ function checkThatOrdersHaveNotAlreadyBeenPurchased($userOrders){
             <a href="#" class="navbar__link">Admin Info</a>
             @endif
             @if(checkThatOrdersHaveNotAlreadyBeenPurchased(auth()->user()->orders))
-            <a href="#" class="navbar__link">Basket</a>
+            <a href="{{route('viewBasket')}}" class="navbar__link">Basket</a>
             @endif
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth

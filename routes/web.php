@@ -22,7 +22,9 @@ Route::get('/filter/{category}', [ProductController::class, 'returnCategories'])
 
 Route::get('/product/{id}', [ProductController::class, 'viewProduct'])->name('viewProduct');
 
-Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder');
+Route::get('/basket', [OrderController::class, 'viewBasket'])->name('viewBasket')->middleware('auth');
+
+Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder')->middleware('auth');
 
 Route::get('/login', [UserController::class, 'accessLogin'])->name('login');
 
@@ -32,6 +34,6 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::post('/register', [UserController::class, 'signup'])->name('register')->middleware('guest');
 
-Route::post('/create-account', [UserController::class, 'login'])->name('createAccount')->middleware('guest');
+Route::post('/access-account', [UserController::class, 'login'])->name('accessAccount')->middleware('guest');
 
 //Route::get('/dummy-data', [ProductController::class, 'addDummyData']);

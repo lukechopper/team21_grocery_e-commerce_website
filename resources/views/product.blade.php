@@ -13,7 +13,7 @@
         @if(session('success'))
         <div class="alert alert-success mt-2" role="alert">
             <p>Success. You have made the purchase!</p>
-            <p class="mb-0">Click <a href="#" class="alert-link">here</a> to visit basket.</p>
+            <p class="mb-0">Click <a href="{{route('viewBasket')}}" class="alert-link">here</a> to visit basket.</p>
         </div>
         @elseif(session('error'))
         <div class="alert alert-danger mt-2" role="alert">

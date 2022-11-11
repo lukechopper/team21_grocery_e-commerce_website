@@ -24,7 +24,7 @@
         @if(session('error'))
         <div class="alert alert-danger" role="alert">Wrong account details. Try again.</div>
         @endif
-        <form action="{{route('createAccount')}}" method="post">
+        <form action="{{route('accessAccount')}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="email">Email:</label>
