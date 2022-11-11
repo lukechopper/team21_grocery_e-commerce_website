@@ -12,7 +12,17 @@ class OrderController extends Controller
     //
 
     public function viewBasket(){
-        dd('Basket');
+        $userOrders = auth()->user()->orders;
+        $ordersCurrentlyInBasket = array();
+        foreach($userOrders as $order){
+            if(!isset($order->whenPurchased)){ array_push($ordersCurrentlyInBasket, $order); }
+        }
+
+        if(!count($ordersCurrentlyInBasket) || auth()->user()->isAdmin){
+            return redirect()->route('home');
+        }
+
+        return view('basket', ['bOrders' => $ordersCurrentlyInBasket]);
     }
 
     public function makeOrder(Request $request){

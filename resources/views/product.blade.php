@@ -38,6 +38,11 @@
             </div>
             @endguest
             @auth
+            @if(auth()->user()->isAdmin)
+            <div class="alert alert-secondary" role="alert">
+                You are an <strong>admin</strong>. You are not able to buy products.
+            </div>
+            @else
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form action="{{route('makeOrder')}}" method="post">
@@ -56,6 +61,7 @@
                     </form>
                 </div>
             </div>
+            @endif
             @endauth
         </div>
         @endif
