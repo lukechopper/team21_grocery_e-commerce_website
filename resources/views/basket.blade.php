@@ -29,10 +29,10 @@ function calculateTotal($bOrders){
             @foreach($bOrders as $bOrder)
             <div class="row">
                 <div class="col-md-2 col-sm-3">
-                    <img class="media__image" src="{{$bOrder->product->url}}" alt="{{$bOrder->product->name}}">
+                    <a href="{{route('viewProduct', $bOrder->product_id)}}" class="inline-link"><img class="media__image" src="{{$bOrder->product->url}}" alt="{{$bOrder->product->name}}"></a>
                 </div>
                 <form class="col-md-10 col-sm-9 align-self-center" action="{{route('deleteFromBasket')}}" method="post">
-                    <h5>{{$bOrder->product->name}} (x{{$bOrder->amount}}) – £{{$bOrder->price}}</h5>
+                    <h5><a href="{{route('viewProduct', $bOrder->product_id)}}" class="inline-link">{{$bOrder->product->name}} (x{{$bOrder->amount}}) – £{{$bOrder->price}}</a></h5>
                     @csrf
                     <input type="hidden" name="order_id" id="order_id" value="{{$bOrder->id}}" />
                     <button type="submit" class="btn btn-danger mt-2">Delete</button>

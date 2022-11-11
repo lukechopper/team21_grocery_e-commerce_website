@@ -8,3 +8,6 @@
     height: auto;
     object-fit: contain;
 }
+.inline-link{
+    display: inline-block;
+}
