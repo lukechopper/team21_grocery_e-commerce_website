@@ -26,7 +26,9 @@ class OrderController extends Controller
         $ordersCurrentlyInBasket = $this->getOrdersCurrentlyInBasket();
 
         if(!count($ordersCurrentlyInBasket) || auth()->user()->isAdmin){
-            return redirect()->route('home');
+            if(empty(session('success')) && empty(session('error'))){
+                return redirect()->route('home');
+            }
         }
 
         return view('basket', ['bOrders' => $ordersCurrentlyInBasket]);
@@ -63,8 +65,6 @@ class OrderController extends Controller
         }
 
         return back()->with('success', 'true');
-        // $current_date_time = Carbon::now()->toDateTimeString();
-        // dd($current_date_time);
     }
 
     public function makePurchase(Request $request){
@@ -81,6 +81,20 @@ class OrderController extends Controller
 
         $indivOrderIds = explode(",", $request->order_ids);
 
-        dd(count($indivOrderIds));
+        try{
+            foreach($indivOrderIds as $indivOrderId){
+                $selectInfo = Order::find(trim($indivOrderId));
+                $selectInfo->address = $request->address;
+                $selectInfo->first_name = $request->first_name;
+                $selectInfo->last_name = $request->last_name;
+                $selectInfo->phone_number = $request->phone_number;
+                $selectInfo->whenPurchased = Carbon::now()->toDateTimeString();
+                $selectInfo->save();
+            }
+        }catch(QueryException $exception){
+            return back()->with('error', 'true');
+        }
+
+        return back()->with('success', 'true');
     }
 }
