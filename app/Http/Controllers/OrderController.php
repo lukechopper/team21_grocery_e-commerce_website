@@ -79,8 +79,6 @@ class OrderController extends Controller
 
         array_push($formattedPurchasedOrders, $formattedIter);
 
-        dd($formattedPurchasedOrders);
-
         return view('pastOrders', ['pOrders' => $formattedPurchasedOrders]);
     }
 

@@ -1,3 +1,13 @@
+@php
+function calculateTotalSpent($pOrders){
+$returnTotal = 0;
+foreach($pOrders as $pOrder){
+$returnTotal += (float)$pOrder['price'];
+}
+return number_format((float)$returnTotal, 2, '.', '');
+}
+@endphp
+
 @extends('partials.header')
 
 @section('title')
@@ -14,6 +24,32 @@
 <body>
     <div class="container">
         <h1>Past Orders</h1>
+        @foreach($pOrders as $index=>$pOrder)
+        <div class="row">
+            <div class="col-md-3">
+                <h5>{{$pOrder['desc']}}</h5>
+            </div>
+            <div class="col-md-1 align-self-center text-md-center">
+                <p>£{{number_format((float)$pOrder['price'], 2, '.', '')}}</p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p>{{$pOrder['address']}}</p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p>{{$pOrder['first_name']}}</p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p>{{$pOrder['last_name']}}</p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p>{{$pOrder['phone_number']}}</p>
+            </div>
+        </div>
+        @if($index < count($pOrders) - 1)
+        <hr />
+        @endif
+        @endforeach
+        <h1 class="display-6 text-md-end mt-3">Total Spent: £{{calculateTotalSpent($pOrders)}}</h1>
     </div>
 </body>
 

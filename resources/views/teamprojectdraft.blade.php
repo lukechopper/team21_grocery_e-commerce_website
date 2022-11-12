@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        @if($i === count($products))
+        @if($i === count($products) - 1)
         </div>
         @endif
       @endfor
