@@ -84,4 +84,12 @@ class UserController extends Controller
         auth()->logout();
         return view('logout');
     }
+
+    public function viewAdminInfo(){
+        if(!auth()->user()->isAdmin) return redirect()->route('home');
+
+        $allCustomers = User::where('isAdmin', 0)->get();
+
+        return view('adminInfo', ['customers' => $allCustomers]);
+    }
 }

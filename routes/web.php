@@ -26,6 +26,8 @@ Route::get('/basket', [OrderController::class, 'viewBasket'])->name('viewBasket'
 
 Route::get('/past-orders', [OrderController::class, 'viewPastOrders'])->name('viewPastOrders')->middleware('auth');
 
+Route::get('/admin-info', [UserController::class, 'viewAdminInfo'])->name('viewAdminInfo')->middleware('auth');
+
 Route::post('/delete-from-basket', [OrderController::class, 'deleteFromBasket'])->name('deleteFromBasket')->middleware('auth');
 
 Route::post('/make-order', [OrderController::class, 'makeOrder'])->name('makeOrder')->middleware('auth');

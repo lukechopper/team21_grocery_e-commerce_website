@@ -43,7 +43,7 @@ function checkThatHavePurchasedInThePast($userOrders){
             @endguest
             @auth
             @if(auth()->user()->isAdmin)
-            <a href="#" class="navbar__link">Admin Info</a>
+            <a href="{{route('viewAdminInfo')}}" class="navbar__link">Admin Info</a>
             @endif
             @if(checkThatOrdersHaveNotAlreadyBeenPurchased(auth()->user()->orders))
             <a href="{{route('viewBasket')}}" class="navbar__link">Basket</a>
