@@ -20,20 +20,26 @@
         @else
         <h1>All Customers</h1>
         <div class="row align-self-center d-none d-md-flex">
-            <div class="col-md-6 align-self-center">
+            <div class="col-md-4 text-md-center align-self-center">
                 <p><strong>Username</strong></p>
             </div>
-            <div class="col-md-6 align-self-center">
+            <div class="col-md-4 text-md-center align-self-center">
                 <p><strong>Email</strong></p>
+            </div>
+            <div class="col-md-4 text-md-center align-self-center">
+                <p><strong>Created At</strong></p>
             </div>
         </div>
         @foreach($customers as $index=>$customer)
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4 text-md-center align-self-center">
                     <p><span class="d-inline d-sm-inline d-md-none">Username: </span>{{$customer->username}}</p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4 text-md-center align-self-center">
                     <p><span class="d-inline d-sm-inline d-md-none">Email: </span>{{$customer->email}}</p>
+                </div>
+                <div class="col-md-4 text-md-center align-self-center">
+                    <p><span class="d-inline d-sm-inline d-md-none">Created At: </span>{{date_format($customer->created_at, 'd/m/Y')}}</p>
                 </div>
             </div>
             @if($index < count($customers) - 1)
