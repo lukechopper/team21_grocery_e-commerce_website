@@ -24,25 +24,45 @@ return number_format((float)$returnTotal, 2, '.', '');
 <body>
     <div class="container">
         <h1>Past Orders</h1>
+        <div class="row align-self-center d-none d-md-flex">
+            <div class="col-md-3">
+                <p><strong>Description</strong></p>
+            </div>
+            <div class="col-md-1 align-self-center text-md-center">
+                <p><strong>Price</strong></p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p><strong>Address</strong></p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p><strong>First Name</strong></p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p><strong>Last Name</strong></p>
+            </div>
+            <div class="col-md-2 align-self-center text-md-center">
+                <p><strong>Phone Number</strong></p>
+            </div>
+        </div>
         @foreach($pOrders as $index=>$pOrder)
         <div class="row">
             <div class="col-md-3">
                 <h5>{{$pOrder['desc']}}</h5>
             </div>
             <div class="col-md-1 align-self-center text-md-center">
-                <p>£{{number_format((float)$pOrder['price'], 2, '.', '')}}</p>
+                <p><span class="d-inline d-sm-inline d-md-none">Price: </span>£{{number_format((float)$pOrder['price'], 2, '.', '')}}</p>
             </div>
             <div class="col-md-2 align-self-center text-md-center">
-                <p>{{$pOrder['address']}}</p>
+                <p><span class="d-inline d-sm-inline d-md-none">Address: </span>{{$pOrder['address']}}</p>
             </div>
             <div class="col-md-2 align-self-center text-md-center">
-                <p>{{$pOrder['first_name']}}</p>
+                <p><span class="d-inline d-sm-inline d-md-none">First Name: </span>{{$pOrder['first_name']}}</p>
             </div>
             <div class="col-md-2 align-self-center text-md-center">
-                <p>{{$pOrder['last_name']}}</p>
+                <p><span class="d-inline d-sm-inline d-md-none">Last Name: </span>{{$pOrder['last_name']}}</p>
             </div>
             <div class="col-md-2 align-self-center text-md-center">
-                <p>{{$pOrder['phone_number']}}</p>
+                <p><span class="d-inline d-sm-inline d-md-none">Phone Number: </span>{{$pOrder['phone_number']}}</p>
             </div>
         </div>
         @if($index < count($pOrders) - 1)
