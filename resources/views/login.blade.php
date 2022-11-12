@@ -49,7 +49,7 @@
                 <label class="form-check-label" for="remember">Remember me: </label>
             </div>
             <div class="row">
-                <div class="col-12 col-xl-auto mt-2">
+                <div class="col-12 col-md-auto mt-2">
                     <button type="submit" class="btn btn-success btn-block w-100">Login</button>
                 </div>
             </div>

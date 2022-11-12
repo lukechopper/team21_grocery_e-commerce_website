@@ -9,6 +9,16 @@ use Illuminate\Database\QueryException;
 
 class OrderController extends Controller
 {
+    //NOT DIRECTLY RELATED TO ANY ROUTES
+    public function getOrdersAlreadyPurchased(){
+        $userOrders = auth()->user()->orders;
+        $ordersAlreadyPurchased = array();
+        foreach($userOrders as $order){
+            if(isset($order->whenPurchased)){ array_push($ordersAlreadyPurchased, $order); }
+        }
+
+        return $ordersAlreadyPurchased;
+    }
 
     //NOT DIRECTLY RELATED TO ANY ROUTES
     public function getOrdersCurrentlyInBasket(){
@@ -25,13 +35,53 @@ class OrderController extends Controller
 
         $ordersCurrentlyInBasket = $this->getOrdersCurrentlyInBasket();
 
-        if(!count($ordersCurrentlyInBasket) || auth()->user()->isAdmin){
+        if(auth()->user()->isAdmin) return redirect()->route('home');
+
+        if(!count($ordersCurrentlyInBasket)){
             if(empty(session('success')) && empty(session('error'))){
                 return redirect()->route('home');
             }
         }
 
         return view('basket', ['bOrders' => $ordersCurrentlyInBasket]);
+    }
+
+    public function viewPastOrders(){
+        $ordersAlreadyPurchased = $this->getOrdersAlreadyPurchased();
+
+        if(!count($ordersAlreadyPurchased) || auth()->user()->isAdmin){
+            return redirect()->route('home');
+        }
+
+        $formattedPurchasedOrders = array();
+        $formattedIter = array();
+        $pastPurchased = null;
+        $currPurchased = null;
+        $iter = 0;
+
+        foreach($ordersAlreadyPurchased as $orderAP){
+            $currPurchased = $orderAP->whenPurchased;
+            if($currPurchased !== $pastPurchased && $iter > 0){
+                array_push($formattedPurchasedOrders, $formattedIter);
+                $formattedIter = array();
+            }
+
+            !isset($formattedIter['desc']) ? $formattedIter['desc'] = $orderAP->product->name . ' (x' . $orderAP->amount . ')' : $formattedIter['desc'] .= ', ' . $orderAP->product->name . ' (x' . $orderAP->amount . ')';
+            !isset($formattedIter['price']) ? $formattedIter['price'] = (float)$orderAP->price : $formattedIter['price'] += (float)$orderAP->price;
+            !isset($formattedIter['address']) ? $formattedIter['address'] = $orderAP->address : null;
+            !isset($formattedIter['first_name']) ? $formattedIter['first_name'] = $orderAP->first_name : null;
+            !isset($formattedIter['last_name']) ? $formattedIter['last_name'] = $orderAP->last_name : null;
+            !isset($formattedIter['phone_number']) ? $formattedIter['phone_number'] = $orderAP->phone_number : null;
+
+            $pastPurchased = $currPurchased;
+            $iter++;
+        }
+
+        array_push($formattedPurchasedOrders, $formattedIter);
+
+        dd($formattedPurchasedOrders);
+
+        return view('pastOrders', ['pOrders' => $formattedPurchasedOrders]);
     }
 
     public function deleteFromBasket(Request $request){

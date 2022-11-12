@@ -60,7 +60,7 @@
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" />
             </div>
             <div class="row">
-                <div class="col-12 col-xl-auto mt-2">
+                <div class="col-12 col-md-auto mt-2">
                     <button type="submit" class="btn btn-success btn-block w-100">Register</button>
                 </div>
             </div>

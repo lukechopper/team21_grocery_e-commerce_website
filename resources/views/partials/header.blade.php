@@ -49,7 +49,7 @@ function checkThatHavePurchasedInThePast($userOrders){
             <a href="{{route('viewBasket')}}" class="navbar__link">Basket</a>
             @endif
             @if(checkThatHavePurchasedInThePast(auth()->user()->orders))
-            <a href="#" class="navbar__link">Past Orders</a>
+            <a href="{{route('viewPastOrders')}}" class="navbar__link">Past Orders</a>
             @endif
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth

@@ -57,7 +57,11 @@
                             <label for="amount_number">Amount</label>
                             <input type="number" name="amount" class="form-control" id="amount_number" min="1" value="1" />
                         </div>
-                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                        <div class="row">
+                            <div class="col-12 col-md-auto">
+                                <button type="submit" class="btn btn-success btn-block w-100 mt-3">Submit</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
