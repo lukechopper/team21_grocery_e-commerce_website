@@ -100,16 +100,33 @@ class OrderController extends Controller
             return redirect()->route('home');
         }
 
-        try{
-            Order::create([
-                'user_id' => auth()->id(),
-                'product_id' => $request->product_id,
-                'address' => 'N/A',
-                'amount' => $request->amount,
-                'price' => $request->total
-            ]);
-        }catch(QueryException $exception){
-            return back()->with('error', 'true');
+        //Check that there is aleady the same product waiting in the basket
+        $prodAlrInBasket = Order::where('user_id', auth()->id())
+                                        ->whereNull('whenPurchased')
+                                        ->where('product_id', $request->product_id)
+                                        ->first();
+
+        if(isset($prodAlrInBasket)){
+            try{
+                $prodAlrInBasket->amount += (int)$request->amount;
+                $newPrice = (float)$prodAlrInBasket->price + (float)$request->total;
+                $prodAlrInBasket->price = number_format($newPrice, 2, '.', '');
+                $prodAlrInBasket->save();
+            }catch(QueryException $exception){
+                return back()->with('error', 'true');
+            }
+        }else{
+            try{
+                Order::create([
+                    'user_id' => auth()->id(),
+                    'product_id' => $request->product_id,
+                    'address' => 'N/A',
+                    'amount' => $request->amount,
+                    'price' => $request->total
+                ]);
+            }catch(QueryException $exception){
+                return back()->with('error', 'true');
+            }
         }
 
         return back()->with('success', 'true');
