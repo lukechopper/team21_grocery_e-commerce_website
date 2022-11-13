@@ -29,7 +29,7 @@ class UserController extends Controller
     }
 
     public function accessSignup(){
-        $returnVal = $this->preventUnLoggedInUserFromReachingTheRouteUnlessTheyHaveJustBeenFlashedTheRelevantSessionVariables('signup');
+        $returnVal = $this->preventUnLoggedInUserFromReachingTheRouteUnlessTheyHaveJustBeenFlashedTheRelevantSessionVariables('Signup');
         return $returnVal;
     }
 
