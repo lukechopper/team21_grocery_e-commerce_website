@@ -54,7 +54,7 @@ function checkThatHavePurchasedInThePast($userOrders){
             <a href="{{route('logout')}}" class="navbar__link">Logout</a>
             @endauth
             <div class="navbar__dropdown">
-                <button class="navbar__dropbtn">Shop</button>
+                <button class="navbar__dropbtn">Filter</button>
                     <div class="navbar__dropdown-content">
                         <a href="{{route('filterHome', 'Frozen Food')}}" class="navbar__link navbar__link--dropdown">Frozen Food</a>
                         <a href="{{route('filterHome', 'Fruit and Veg')}}" class="navbar__link navbar__link--dropdown">Fruit and Veg</a>
