@@ -24,7 +24,7 @@ return number_format((float)$returnTotal, 2, '.', '');
 <body>
     <div class="container">
         <h1>Past Orders</h1>
-        <div class="row align-self-center d-none d-md-flex">
+        <div class="row d-none d-md-flex">
             <div class="col-md-3">
                 <p><strong>Description</strong></p>
             </div>

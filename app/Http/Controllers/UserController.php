@@ -7,6 +7,7 @@ use Illuminate\Validation\Rules\Password;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\QueryException;
 use App\Models\User;
+use App\Models\Product;
 
 class UserController extends Controller
 {
@@ -88,8 +89,44 @@ class UserController extends Controller
     public function viewAdminInfo(){
         if(!auth()->user()->isAdmin) return redirect()->route('home');
 
-        $allCustomers = User::where('isAdmin', 0)->get();
+        $allCustomers = User::where('isAdmin', 0)->get(); //WILL BE PASSED INTO VIEW
+        $allProducts = Product::all(); //WILL BE PASSED INTO VIEW
 
-        return view('adminInfo', ['customers' => $allCustomers]);
+        //ONE BIG ARRAY of all the orders already purchased (i.e., currently placed) with respect to the customers.
+        $allOrdersCurrentlyPlaced = array();
+        foreach($allCustomers as $customer){
+            $customerOrders = $customer->orders;
+            foreach($customerOrders as $cOrder){
+                if(isset($cOrder->whenPurchased)){ array_push($allOrdersCurrentlyPlaced, $cOrder); }
+            }
+        }
+
+        $formattedOrdersAlreadyPlaced = array(); //WILL BE PASSED INTO VIEW
+        $formattedIter = array();
+        $pastPurchased = null;
+        $currPurchased = null;
+        $iter = 0;
+
+        foreach($allOrdersCurrentlyPlaced as $orderAP){
+            $currPurchased = $orderAP->whenPurchased;
+            if($currPurchased !== $pastPurchased && $iter > 0){
+                array_push($formattedOrdersAlreadyPlaced, $formattedIter);
+                $formattedIter = array();
+            }
+
+            !isset($formattedIter['desc']) ? $formattedIter['desc'] = $orderAP->product->name . ' (x' . $orderAP->amount . ')' : $formattedIter['desc'] .= ', ' . $orderAP->product->name . ' (x' . $orderAP->amount . ')';
+            !isset($formattedIter['price']) ? $formattedIter['price'] = (float)$orderAP->price : $formattedIter['price'] += (float)$orderAP->price;
+            !isset($formattedIter['address']) ? $formattedIter['address'] = $orderAP->address : null;
+            !isset($formattedIter['first_name']) ? $formattedIter['first_name'] = $orderAP->first_name : null;
+            !isset($formattedIter['last_name']) ? $formattedIter['last_name'] = $orderAP->last_name : null;
+            !isset($formattedIter['phone_number']) ? $formattedIter['phone_number'] = $orderAP->phone_number : null;
+
+            $pastPurchased = $currPurchased;
+            $iter++;
+        }
+
+        count($formattedIter) ? array_push($formattedOrdersAlreadyPlaced, $formattedIter) : null;
+
+        return view('adminInfo', ['customers' => $allCustomers, 'apOrders' => $formattedOrdersAlreadyPlaced, 'products' => $allProducts]);
     }
 }
