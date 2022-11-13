@@ -14,6 +14,17 @@
 <body>
     <div class="container">
       @if(count($products))
+      <form action="#" method="post">
+        @csrf
+        <div class="row align-items-center my-3">
+            <div class="col-lg-11 col-md-10">
+                <input type="text" name="search" class="form-control" id="search-input" placeholder="Search...">
+            </div>
+            <div class="col-lg-1 col-md-2">
+                <button type="submit" class="btn btn-success btn-block w-100 mt-md-0 mt-2">Search</button>
+            </div>
+        </div>
+      </form>
       @for($i=0;$i < count($products); $i++)
         @if($i % 3 === 0 && $i > 1)
         </div>
