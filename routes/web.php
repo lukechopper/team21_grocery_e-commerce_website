@@ -22,6 +22,8 @@ Route::get('/filter/{category}', [ProductController::class, 'returnCategories'])
 
 Route::get('/product/{id}', [ProductController::class, 'viewProduct'])->name('viewProduct');
 
+Route::post('/search', [ProductController::class, 'viewSearch'])->name('viewSearch');
+
 Route::get('/basket', [OrderController::class, 'viewBasket'])->name('viewBasket')->middleware('auth');
 
 Route::get('/past-orders', [OrderController::class, 'viewPastOrders'])->name('viewPastOrders')->middleware('auth');

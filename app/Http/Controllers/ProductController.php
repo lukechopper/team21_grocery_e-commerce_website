@@ -27,6 +27,17 @@ class ProductController extends Controller
         return view('product', ['product' => $foundProduct]);
     }
 
+    public function viewSearch(Request $request){
+        $searchQuery = $request->search;
+
+        if(!trim($searchQuery)){
+            return redirect()->route('home');
+        }
+
+        $foundProducts = Product::where('name', 'LIKE', "%{$searchQuery}%")->get();
+        return view('teamprojectdraft', ['products' => $foundProducts]);
+    }
+
     public function addDummyData(){
         try{
             $found = Product::find(1);

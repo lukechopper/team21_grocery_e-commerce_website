@@ -13,8 +13,7 @@
 @section('body')
 <body>
     <div class="container">
-      @if(count($products))
-      <form action="#" method="post">
+    <form action="{{route('viewSearch')}}" method="post">
         @csrf
         <div class="row align-items-center my-3">
             <div class="col-lg-11 col-md-10">
@@ -25,6 +24,7 @@
             </div>
         </div>
       </form>
+      @if(count($products))
       @for($i=0;$i < count($products); $i++)
         @if($i % 3 === 0 && $i > 1)
         </div>
