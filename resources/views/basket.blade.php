@@ -33,7 +33,7 @@ return $returnString;
 @section('body')
 
 <body>
-    <div class="container">
+    <div class="container mb-3">
         @if(session('success'))
         <div class="alert alert-success mt-2" role="alert">
             <p>Success. You have made the purchase!</p>

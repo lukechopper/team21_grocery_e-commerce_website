@@ -147,13 +147,14 @@ class OrderController extends Controller
         $indivOrderIds = explode(",", $request->order_ids);
 
         try{
+            $currTime = Carbon::now()->toDateTimeString();
             foreach($indivOrderIds as $indivOrderId){
                 $selectInfo = Order::find(trim($indivOrderId));
                 $selectInfo->address = $request->address;
                 $selectInfo->first_name = $request->first_name;
                 $selectInfo->last_name = $request->last_name;
                 $selectInfo->phone_number = $request->phone_number;
-                $selectInfo->whenPurchased = Carbon::now()->toDateTimeString();
+                $selectInfo->whenPurchased = $currTime;
                 $selectInfo->save();
             }
         }catch(QueryException $exception){

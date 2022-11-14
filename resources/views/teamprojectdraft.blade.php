@@ -16,10 +16,10 @@
     <form action="{{route('viewSearch')}}" method="post">
         @csrf
         <div class="row align-items-center my-3">
-            <div class="col-lg-11 col-md-10">
+            <div class="col-xl-11 col-lg-10 col-md-10">
                 <input type="text" name="search" class="form-control" id="search-input" placeholder="Search...">
             </div>
-            <div class="col-lg-1 col-md-2">
+            <div class="col-xl-1 col-lg-2 col-md-2">
                 <button type="submit" class="btn btn-success btn-block w-100 mt-md-0 mt-2">Search</button>
             </div>
         </div>
