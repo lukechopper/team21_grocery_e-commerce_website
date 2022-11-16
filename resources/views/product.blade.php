@@ -59,7 +59,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-auto">
-                                <button type="submit" class="btn btn-success btn-block w-100 mt-3">Submit</button>
+                                <button type="submit" class="btn btn-success btn-block w-100 mt-3">Add to basket</button>
                             </div>
                         </div>
                     </form>
