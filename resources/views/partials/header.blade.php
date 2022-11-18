@@ -31,40 +31,42 @@ function checkThatHavePurchasedInThePast($userOrders){
 </head>
 <header>
 <div class="navbar__itself">
-    <a href="{{route('home')}}" class="navbar__image"><img class = "pf" src = "{{asset('PFlogo.png')}}" width="205px"></a>
+    <div class="container">
+    <a href="{{route('home')}}" class="navbar__image"><img class = "pf" src = "{{asset('images/PFlogo.png')}}" width="300px"></a>
     <div class = "navbar__navsection">
         <div class="navbar__itself">
-            <a href="{{route('home')}}" class="navbar__link">Home</a>
-            <a href="#" class="navbar__link">Contact Us</a>
-            <a href="#" class="navbar__link">About Us</a>
+            <a href="{{route('home')}}" class="navbar_item">Home</a>
+            <a href="#" class="navbar_item">About Us</a>
+            <a href="#" class="navbar_item">Contact Us</a>
             @guest
-            <a href="{{route('login')}}" class="navbar__link">Log In</a>
-            <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
+            <a href="{{route('login')}}" class="navbar_item">Log In</a>
+            <a href="{{route('signup')}}" class="navbar_item">Sign Up</a>
             @endguest
             @auth
             @if(auth()->user()->isAdmin)
-            <a href="{{route('viewAdminInfo')}}" class="navbar__link">Admin Info</a>
+            <a href="{{route('viewAdminInfo')}}" class="navbar_item">Admin Info</a>
             @endif
             @if(checkThatOrdersHaveNotAlreadyBeenPurchased(auth()->user()->orders))
-            <a href="{{route('viewBasket')}}" class="navbar__link">Basket</a>
+            <a href="{{route('viewBasket')}}" class="navbar_item">Basket</a>
             @endif
             @if(checkThatHavePurchasedInThePast(auth()->user()->orders))
-            <a href="{{route('viewPastOrders')}}" class="navbar__link">Past Orders</a>
+            <a href="{{route('viewPastOrders')}}" class="navbar_item">Past Orders</a>
             @endif
-            <a href="{{route('logout')}}" class="navbar__link">Logout</a>
+            <a href="{{route('logout')}}" class="navbar_item">Logout</a>
             @endauth
             <div class="navbar__dropdown">
                 <button class="navbar__dropbtn">Filter</button>
                     <div class="navbar__dropdown-content">
-                        <a href="{{route('filterHome', 'Frozen Food')}}" class="navbar__link navbar__link--dropdown">Frozen Food</a>
-                        <a href="{{route('filterHome', 'Fruit and Veg')}}" class="navbar__link navbar__link--dropdown">Fruit and Veg</a>
-                        <a href="{{route('filterHome', 'Chilled Food')}}" class="navbar__link navbar__link--dropdown">Chilled Food</a>
-                        <a href="{{route('filterHome', 'Tinned Food')}}" class="navbar__link navbar__link--dropdown">Tinned Food</a>
-                        <a href="{{route('filterHome', 'Drinks')}}" class="navbar__link navbar__link--dropdown">Drinks</a>
+                        <a href="{{route('filterHome', 'Frozen Food')}}" class="navbar_item navbar_item--dropdown">Frozen Food</a>
+                        <a href="{{route('filterHome', 'Fruit and Veg')}}" class="navbar_item navbar_item--dropdown">Fruit and Veg</a>
+                        <a href="{{route('filterHome', 'Chilled Food')}}" class="navbar_item navbar_item--dropdown">Chilled Food</a>
+                        <a href="{{route('filterHome', 'Tinned Food')}}" class="navbar_item navbar_item--dropdown">Tinned Food</a>
+                        <a href="{{route('filterHome', 'Drinks')}}" class="navbar_item navbar_item--dropdown">Drinks</a>
                     </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 </header>
 @yield('body')
