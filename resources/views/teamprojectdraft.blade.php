@@ -12,6 +12,17 @@
 
 @section('body')
 <body>
+    <div class= "home_img">
+     <div id="example2">  				
+		<div class="oneByOne_item">     
+			<img src="{{asset('images/img3.jpg')}}" class="img1"/>
+			<span class="text1">Shop with us for fresh high quality products this new years.</span>			
+			<span class="text2">Great Deals, Pure Foods!</span>												
+		</div>
+    </div>
+        
+    <div class="c"></div>
+    </div>
     <div class="container">
     <form action="{{route('viewSearch')}}" method="post">
         @csrf
@@ -54,6 +65,5 @@
       @endif
     </div>
 </body>
-
 </html>
 @endsection

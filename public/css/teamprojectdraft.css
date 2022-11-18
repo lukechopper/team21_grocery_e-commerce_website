@@ -1,3 +1,68 @@
+.c {
+    clear: both;
+  }
+  /**css for home page**/
+  .home_img {
+	width:100%;
+	height: 750px;
+	box-sizing: border-box;
+	margin: left;
+
+ }
+ 
+ #example2{
+	position: absolute;
+}        
+
+#example2 .oneByOne_item{
+	position: absolute;
+	width:858px;    
+} 
+     
+/* slide 1 */ 
+#example2 .oneByOne_item .text1{      
+	
+	position: relative;
+    width:62%;
+    left:60%;
+    text-align: center;
+	background-color: rgba(0, 0, 0, 0.6);
+	float: left;
+	color: #FFFFFF;	 
+	padding: 8px;
+	top: 334px;
+    font-family: Century Gothic;
+    font-weight: bold;
+    font-size: 34px;
+	line-height:53px;
+	margin-bottom: 20px;
+}
+
+#example2 .oneByOne_item .text2{  
+	clear: left;
+	position: relative;
+	float: left;
+	color: #EFEFEF;    
+    background-color: rgba(27, 204, 0, 0.629);
+	padding: 16px;
+	border-radius:0;
+	top: 334px;
+    left: 75%;
+    font-family: Century Gothic;
+    font-weight: bold;
+    font-size: 21px;
+	letter-spacing:1px;
+	 box-shadow:0 0 10px #000;
+} 
+                                
+
+
+#example2 img.img1{
+	position: absolute;
+	top: 0;
+	left: 0;	
+}
+
 .card.card--no_border{
     border: none;
 }
