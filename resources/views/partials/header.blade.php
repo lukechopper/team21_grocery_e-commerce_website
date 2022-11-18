@@ -38,7 +38,7 @@ function checkThatHavePurchasedInThePast($userOrders){
             <a href="#" class="navbar__link">Contact Us</a>
             <a href="#" class="navbar__link">About Us</a>
             @guest
-            <a href="{{route('login')}}" class="navbar__link">Sign In</a>
+            <a href="{{route('login')}}" class="navbar__link">Log In</a>
             <a href="{{route('signup')}}" class="navbar__link">Sign Up</a>
             @endguest
             @auth
