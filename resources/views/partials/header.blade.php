@@ -35,7 +35,7 @@ function checkThatHavePurchasedInThePast($userOrders){
     <div class = "navbar__navsection">
         <div class="navbar__itself">
             <a href="{{route('home')}}" class="navbar__link">Home</a>
-            <a href="#" class="navbar__link">Contact Us</a>
+            <a href="{{route('contactUs')}}" class="navbar__link">Contact Us</a>
             <a href="#" class="navbar__link">About Us</a>
             @guest
             <a href="{{route('login')}}" class="navbar__link">Sign In</a>

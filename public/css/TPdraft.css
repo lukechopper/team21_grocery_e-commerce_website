@@ -101,3 +101,23 @@
     max-width: 100%;
     padding: 50px;
 }
+
+.wrapper {
+  float: left;
+  padding-left: 25px;
+  padding-top: 50px;
+  width: 100%;
+}
+
+.contact_col1{
+  width:50%;
+  float:left;
+  text-align: center;
+}
+.contact_col2{
+  width:50%;
+  float:right;
+  text-align: center;
+}
+
+
