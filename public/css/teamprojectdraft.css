@@ -1,66 +1,59 @@
-.c {
-    clear: both;
-  }
+
   /**css for home page**/
   .home_img {
 	width:100%;
-	height: 750px;
-	box-sizing: border-box;
-	margin: left;
-
+    max-width: 1300px;
+	margin: auto;
+    padding: 0 25px;
  }
- 
- #example2{
-	position: absolute;
-}        
 
-#example2 .oneByOne_item{
-	position: absolute;
-	width:858px;    
-} 
-     
-/* slide 1 */ 
-#example2 .oneByOne_item .text1{      
-	
+ .home_img__text_section{
 	position: relative;
-    width:62%;
-    left:60%;
+    width: 100%;
+}
+
+.home_img__text_section_container{
+	position: absolute;
+    display: flex;
+	left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* slide 1 */
+.home_img__text_1{
     text-align: center;
 	background-color: rgba(0, 0, 0, 0.6);
-	float: left;
-	color: #FFFFFF;	 
+	color: #FFFFFF;
 	padding: 8px;
-	top: 334px;
     font-family: Century Gothic;
     font-weight: bold;
     font-size: 34px;
 	line-height:53px;
-	margin-bottom: 20px;
+    width: 95%;
+    max-width: 806px;
+    margin-bottom: 1rem;
 }
 
-#example2 .oneByOne_item .text2{  
-	clear: left;
-	position: relative;
-	float: left;
-	color: #EFEFEF;    
+.home_img__text_2{
+	color: #EFEFEF;
     background-color: rgba(27, 204, 0, 0.629);
 	padding: 16px;
 	border-radius:0;
-	top: 334px;
-    left: 75%;
     font-family: Century Gothic;
     font-weight: bold;
     font-size: 21px;
 	letter-spacing:1px;
-	 box-shadow:0 0 10px #000;
-} 
-                                
+	box-shadow:0 0 10px #000;
+}
 
-
-#example2 img.img1{
-	position: absolute;
-	top: 0;
-	left: 0;	
+.home_img__image{
+    width: 100%;
+    object-fit: contain;
 }
 
 .card.card--no_border{
@@ -72,6 +65,15 @@
 @media(max-width: 767px){
     .card__title.card__title--extra_height{
         min-height: 0px;
+    }
+    .home_img__text_1{
+        font-size: 20px;
+        line-height: normal;
+    }
+
+    .home_img__text_2{
+        font-size: 18px;
+        padding: 10px;
     }
 }
 .card__product_image{
