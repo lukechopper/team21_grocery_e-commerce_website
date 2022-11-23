@@ -8,31 +8,27 @@
 @endsection
 <section class = "icons-container">
  
-    <div class="footer">
-        <div class="info">
-            <i class="fa-solid fa-truck"></i>
-                <h3>Free Delivery</h3>
-                <span>on orders over £30</span></div>
-               
-                <div class="info">
-            <i class="fa-regular fa-credit-card"></i>
-            <h3>Secure payments</h3>
-            <span>Protected </span>
+<style>
+        .footer {
+           
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#32CD32;
+   color: white;
+   text-align: center; 
+        }
+    </style>
+    <footer>
+        <div class="footer">
+          <p class="lead"><em>Copyright</em> &copy; PureFoods</p>
+          <blockquote>2022</blockquote>
+  
+          <a href="#" class="position-absolute bottom-0 end-0 p-5">
+            <i class="bi bi-arrow-up-circle h1"></i>
+          </a>
         </div>
- 
-        <div class="info">
-        <i class="fa-solid fa-location-dot"></i>
-            <h3>Address</h3>
-            <span>21 Aston Street<br> United Kingdom, Birmingham <br> B4 7DE</span>
-        </div>
- 
-        <div class="info">
-        <i class="fa-solid fa-arrow-right-arrow-left"></i>
-            <h3>Returns</h3>
-            <span>7 Day returns</span>
-        </div>
- 
-    </div>
+      </footer>
  
 </section>
  
