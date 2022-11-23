@@ -29,7 +29,10 @@ function checkThatHavePurchasedInThePast($userOrders){
     @sectionMissing('title')
     <title>PureFoods | Groceries</title>
     @endif
+
 </head>
+<div class="overall__container">
+<div>
 <header>
 <div class="navbar__itself">
     <div class="container">
@@ -38,7 +41,7 @@ function checkThatHavePurchasedInThePast($userOrders){
         <div class="navbar__itself">
             <a href="{{route('home')}}" class="navbar_item">Home</a>
             <a href="#" class="navbar_item">About Us</a>
-            <a href="#" class="navbar_item">Contact Us</a>
+            <a href="{{route('contactUs')}}" class="navbar_item">Contact Us</a>
             @guest
             <a href="{{route('login')}}" class="navbar_item">Log In</a>
             <a href="{{route('signup')}}" class="navbar_item">Sign Up</a>
@@ -71,3 +74,8 @@ function checkThatHavePurchasedInThePast($userOrders){
 </div>
 </header>
 @yield('body')
+</div>
+<div>
+@include('partials.footer')
+</div>
+</div>

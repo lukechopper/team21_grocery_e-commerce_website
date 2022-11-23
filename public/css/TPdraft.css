@@ -19,6 +19,7 @@ body {
     padding-left: 25px;
     padding-right: 25px;
 }
+
 .navbar__itself {
     overflow: hidden;
     background-color:#ffffff;
@@ -59,7 +60,7 @@ body {
   }
 
   .navbar_item:hover, .navbar__dropdown:hover .navbar__dropbtn {
-  
+
     transition: 0.5s;
     color:#7aa840;
   }
@@ -111,4 +112,104 @@ body {
 .navbar__col-2 img {
     max-width: 100%;
     padding: 50px;
+}
+/**contact us **/
+.heading{
+  text-align: center;
+  font-size: 4rem;
+}
+
+.contact .contactrow{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
+}
+
+.contactgrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 90px;
+  max-width: 1200px;
+  margin: 25px auto;
+}
+
+.contactart img, .featured img{
+  width: 100%;
+  border: 5px solid;
+  border-radius: 10px;
+}
+
+.contactart p, .contactart h3 {
+  margin: 20px;
+}
+
+.contactart .fa {
+  padding: 10px;
+  margin: auto 0rem 1rem 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  width: 40px;
+}
+
+.contactart .fa-facebook {
+  background: #4267B2;
+  color: #ffffff;
+}
+
+.contactart .fa-twitter {
+  background: #1DA1F2;
+  color:  #ffffff;
+}
+
+.contactart .fa-instagram {
+  background:  #c13584;
+  color: #ffffff;
+}
+
+.featured {
+  align-items: center;
+  grid-column: span 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 25px, 15px;
+}
+/**footer css **/
+.icons-container i{
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.icons-container span{
+  color: #555;
+  font-size: 10px;
+  display: inline-block;
+}
+
+.footer{
+ position: relative;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ background-color: #eee;
+ color: rgb(0, 0, 0);
+ text-align: center;
+ display: inline-block;
+}
+
+.info{
+  display: inline-block;
+  padding: 2rem 2rem;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.overall__container{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
