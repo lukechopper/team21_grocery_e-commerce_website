@@ -2,8 +2,8 @@
 
 @section('css')
 <!--all the links for style sheets custom and ready made bootstrap-->
-<link rel="stylesheet" href="{{asset('css/product.css')}}">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="{{asset('css/input.css')}}">
 @endsection
 
 @section('body')
@@ -59,7 +59,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 col-md-auto">
-                                <button type="submit" class="btn btn-success btn-block w-100 mt-3">Add to basket</button>
+                                <button type="submit" class="btn_style">Add to basket</button>
                             </div>
                         </div>
                     </form>
