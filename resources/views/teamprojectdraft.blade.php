@@ -60,7 +60,7 @@
     @endif
     @endfor
     @else
-    <div class="alert alert-danger mt-2" role="alert">
+    <div class="alert alert-danger mt-n4" role="alert">
         Sorry. No products could be found.
     </div>
     @endif
