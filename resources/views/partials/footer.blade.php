@@ -26,6 +26,8 @@
   
           <a href="#" class="position-absolute bottom-0 end-0 p-5">
             <i class="bi bi-arrow-up-circle h1"></i>
+
+            <img src="images/PFlogo.png" alt="PFlogo" width="120px">
           </a>
         </div>
       </footer>
