@@ -42,7 +42,7 @@
                         <p>Regarding any issues, please call us at:<br></br>
                             +44 74970097534<br></br>
 
-                            Dial the apropriate extention to recieve the appropriate level of support.
+                            Dial the appropriate extention to receive the appropriate level of support.
                             Please be aware that the wait time varies depending on the volume of calls.</p>
                     </div>
             </article>
