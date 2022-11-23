@@ -28,8 +28,10 @@ function checkThatHavePurchasedInThePast($userOrders){
     @sectionMissing('title')
     <title>PureFoods | Groceries</title>
     @endif
-    
+
 </head>
+<div class="overall__container">
+<div>
 <header>
 <div class="navbar__itself">
     <div class="container">
@@ -71,3 +73,8 @@ function checkThatHavePurchasedInThePast($userOrders){
 </div>
 </header>
 @yield('body')
+</div>
+<div>
+@include('partials.footer')
+</div>
+</div>

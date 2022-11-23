@@ -60,7 +60,7 @@ body {
   }
 
   .navbar_item:hover, .navbar__dropdown:hover .navbar__dropbtn {
-  
+
     transition: 0.5s;
     color:#7aa840;
   }
@@ -143,29 +143,29 @@ body {
 }
 
 .contactart p, .contactart h3 {
-  margin: 20px;  
+  margin: 20px;
 }
 
 .contactart .fa {
   padding: 10px;
   margin: auto 0rem 1rem 1rem;
-  margin-top: 1rem;   
-  font-size: 1.5rem;  
-  width: 40px;  
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  width: 40px;
 }
 
 .contactart .fa-facebook {
   background: #4267B2;
-  color: #ffffff;  
+  color: #ffffff;
 }
 
 .contactart .fa-twitter {
   background: #1DA1F2;
-  color:  #ffffff;  
+  color:  #ffffff;
 }
 
 .contactart .fa-instagram {
-  background:  #c13584;  
+  background:  #c13584;
   color: #ffffff;
 }
 
@@ -182,13 +182,13 @@ body {
   padding: 2rem;
   font-size: 1.5rem;
 }
- 
+
 .icons-container span{
   color: #555;
   font-size: 10px;
   display: inline-block;
 }
- 
+
 .footer{
  position: relative;
  left: 0;
@@ -199,10 +199,17 @@ body {
  text-align: center;
  display: inline-block;
 }
- 
+
 .info{
   display: inline-block;
   padding: 2rem 2rem;
   align-items: center;
   vertical-align: middle;
+}
+
+.overall__container{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
 }
