@@ -7,33 +7,33 @@
 <script src="https://kit.fontawesome.com/3cc03d8fde.js"></script>
 @endsection
 <section class = "icons-container">
-
+ 
     <div class="footer">
         <div class="info">
-            <i class="fa-solid fa-truck"></i> 
+            <i class="fa-solid fa-truck"></i>
                 <h3>Free Delivery</h3>
                 <span>on orders over £30</span></div>
-                
+               
                 <div class="info">
             <i class="fa-regular fa-credit-card"></i>
             <h3>Secure payments</h3>
             <span>Protected </span>
         </div>
-
+ 
         <div class="info">
         <i class="fa-solid fa-location-dot"></i>
             <h3>Address</h3>
-            <span>'insert address here'</span>
+            <span>21 Aston Street<br> United Kingdom, Birmingham <br> B4 7DE</span>
         </div>
-
+ 
         <div class="info">
         <i class="fa-solid fa-arrow-right-arrow-left"></i>
             <h3>Returns</h3>
             <span>7 Day returns</span>
         </div>
-
+ 
     </div>
-
+ 
 </section>
-
+ 
 <!--footer section ends-->

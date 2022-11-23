@@ -8,6 +8,7 @@
 <!--all the links for style sheets custom and ready made bootstrap-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+<link rel="stylesheet" href="{{asset('css/input.css')}}">
 <script src="https://kit.fontawesome.com/3cc03d8fde.js" crossorigin="anonymous"></script>
 @endsection
 
@@ -27,7 +28,7 @@
                         dissatisfied with you service and experience just get in touch and one of our customer service or technical support agents 
                         will help you. If you would like to learn more about our company values visit About Us:</p>
                     <form class="aboutbtn">
-                        <button type="submit" class="btn btn-success btn-block w-100 mt-md-0 mt-2" formaction="#">About Us</button>
+                        <button type="submit" class="btn_style" formaction="#">About Us</button>
                     </form><br></br>
                     <p>If you having any issues regaring: <b>Order, Delivery, Payment, Return & Refund, Product & Stock or Account</b> 
                     please email us and we will try our best to resolve your issue promptly.</p><br></br>
@@ -67,5 +68,6 @@
                     </div>
             </article>
         </main>
-
+     @include('partials.footer')
 @endsection
+
