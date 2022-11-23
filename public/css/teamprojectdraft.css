@@ -1,5 +1,9 @@
 
-  /**css for home page**/
+ .inline-link{
+    display: inline-block;
+ }
+
+ /**css for home page**/
   .home_img {
 	width:100%;
     max-width: 1300px;
