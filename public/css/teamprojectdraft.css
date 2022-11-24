@@ -116,3 +116,10 @@
     font-size: 25px;
     font-weight: 300;
 }
+@media(max-width: 767px){
+
+    .card-body h4 {
+        min-height: 0px;
+        margin-bottom: 1rem;
+    }
+}

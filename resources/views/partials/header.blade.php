@@ -40,7 +40,7 @@ function checkThatHavePurchasedInThePast($userOrders){
     <div class = "navbar__navsection">
         <div class="navbar__itself">
             <a href="{{route('home')}}" class="navbar_item">Home</a>
-            <a href="#" class="navbar_item">About Us</a>
+            <a href="{{route('aboutus')}}" class="navbar_item">About Us</a>
             <a href="{{route('contactUs')}}" class="navbar_item">Contact Us</a>
             @guest
             <a href="{{route('login')}}" class="navbar_item">Log In</a>
@@ -66,6 +66,7 @@ function checkThatHavePurchasedInThePast($userOrders){
                         <a href="{{route('filterHome', 'Chilled Food')}}" class="navbar_item navbar_item--dropdown">Chilled Food</a>
                         <a href="{{route('filterHome', 'Tinned Food')}}" class="navbar_item navbar_item--dropdown">Tinned Food</a>
                         <a href="{{route('filterHome', 'Drinks')}}" class="navbar_item navbar_item--dropdown">Drinks</a>
+                        <a href="{{route('filterHome', 'Essentials')}}" class="navbar_item navbar_item--dropdown">Essentials</a>
                     </div>
             </div>
         </div>

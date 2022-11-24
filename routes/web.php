@@ -48,6 +48,10 @@ Route::get('contact-us', function(){
     return view('contactus');
 })->name('contactUs');
 
+Route::get('about-us', function(){
+    return view('aboutus');
+})->name('aboutus');
+
 Route::post('/access-account', [UserController::class, 'login'])->name('accessAccount')->middleware('guest');
 
 //Route::get('/dummy-data', [ProductController::class, 'addDummyData']);
