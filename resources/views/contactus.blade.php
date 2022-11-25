@@ -28,7 +28,7 @@
                         dissatisfied with you service and experience just get in touch and one of our customer service or technical support agents
                         will help you. If you would like to learn more about our company values visit About Us:</p>
                     <form class="aboutbtn">
-                        <button type="submit" class="btn_style" formaction="#">About Us</button>
+                    <button type="submit" class="btn_style" formaction="{{route('aboutus')}}">About Us</button>
                     </form><br></br>
                     <p>If you having any issues regaring: <b>Order, Delivery, Payment, Return & Refund, Product & Stock or Account</b>
                     please email us and we will try our best to resolve your issue promptly.</p><br></br>
