@@ -225,3 +225,12 @@ margin-top: -1rem !important;
 .mt-n4 {
 margin-top: -1.5rem !important;
 }
+
+.about p{
+  text-align: center;
+}
+
+.about h2{
+  text-align: center;
+  padding: 2rem;
+}
