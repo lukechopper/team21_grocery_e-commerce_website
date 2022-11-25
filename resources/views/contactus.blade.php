@@ -60,8 +60,8 @@
                         <p>Follow us on our social media and keep up to date with our upcoming deals and offers.</p>
                         <div class="contactart">
                             <div class= "sociallinks">
-                                <a style="text-decoration: none" href="#" class="fa fa-facebook"></a>
-                                <a style="text-decoration: none" href="#" class="fa fa-instagram"></a>
+                                <a style="text-decoration: none" href="https://linkedin.com/in/pure-foodsltd" class="fa fa-linkedin"></a>
+                                <a style="text-decoration: none" href="https://www.instagram.com/purefoods.ltd/" class="fa fa-instagram"></a>
                                 <a style="text-decoration: none" href="https://twitter.com/PureFoods_ltd" class="fa fa-twitter"></a>
                             </div>
                         </div>
