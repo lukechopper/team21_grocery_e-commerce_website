@@ -50,7 +50,8 @@ Route::get('contact-us', function(){
 
 Route::get('about-us', function(){
     return view('aboutus');
-})->name('aboutUs');
+})->name('aboutus');
+
 
 Route::post('/access-account', [UserController::class, 'login'])->name('accessAccount')->middleware('guest');
 

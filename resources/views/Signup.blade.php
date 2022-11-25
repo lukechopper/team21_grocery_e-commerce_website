@@ -13,7 +13,7 @@
 @section('body')
 
 <body>
-    <div class="container">
+    <div class="container mb-4">
     <div class="wrapper">
     @if(session('success'))
         <div class="alert alert-success mt-2" role="alert">
