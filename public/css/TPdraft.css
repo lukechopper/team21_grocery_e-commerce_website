@@ -178,33 +178,48 @@ body {
   padding: 25px, 15px;
 }
 /**footer css **/
-.icons-container i{
-  padding: 2rem;
-  font-size: 1.5rem;
+.icons-container{
+  background-color: #eee;
 }
 
-.icons-container span{
-  color: #555;
-  font-size: 10px;
-  display: inline-block;
-}
-
-.footer{
+.footer_col1{
+padding:10px 0;
  position: relative;
  left: 0;
  bottom: 0;
- width: 100%;
- background-color: #eee;
+ width: 70%;
  color: rgb(0, 0, 0);
  text-align: center;
  display: inline-block;
 }
 
+.footer_col2{
+  padding:10px 0;
+  width:30%;
+  text-align: center;
+  float: right;
+}
+.footer_col2_row2{
+  text-align: center;
+  width:100%;
+}
+.footer_col2_row2 a{
+  width:33.3;
+  padding:15px;
+}
+
 .info{
+  width:25%;
   display: inline-block;
-  padding: 2rem 2rem;
+  float: left;
+  padding: 10px;
   align-items: center;
   vertical-align: middle;
+}
+
+.info h3{
+  font-size: 20px;
+  font-weight:bold;
 }
 
 .overall__container{
@@ -213,6 +228,73 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media(max-width: 1180px){
+  .icons-container{
+    background-color: #eee;
+    display: inline-block;
+  }
+  .footer_col1{
+    width:100%;
+    float: left;
+  }
+  .footer_col2{
+    padding:10px 0;
+    width:100%;
+    text-align: center;
+    float: left;
+  }
+  .footer_col2_row2{
+    text-align: center;
+    width:100%;
+  }
+  .footer_col2_row2 a{
+    width:100%;
+    padding:15px;
+  }
+  .info{
+    width:25%;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    align-items: center;
+    vertical-align: middle;
+  }
+}
+@media(max-width: 767px){
+  .icons-container{
+    background-color: #eee;
+    display: inline-block;
+  }
+  .footer_col1{
+    width:100%;
+    float: left;
+  }
+  .footer_col2{
+    padding:10px 0;
+    width:100%;
+    text-align: center;
+    float: left;
+  }
+  .footer_col2_row2{
+    text-align: center;
+    width:100%;
+  }
+  .footer_col2_row2 a{
+    width:100%;
+    padding:15px;
+  }
+  .info{
+    width:100%;
+    display: inline-block;
+    float: left;
+    padding: 10px;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+}
+
 .mt-n1 {
 margin-top: -0.25rem !important;
 }
@@ -228,6 +310,8 @@ margin-top: -1.5rem !important;
 
 .about p{
   text-align: center;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
 
 .about h2{
