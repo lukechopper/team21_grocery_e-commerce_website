@@ -116,6 +116,6 @@
         </main>
 
     -->
-    </div>
+</body>
 @endsection
 
