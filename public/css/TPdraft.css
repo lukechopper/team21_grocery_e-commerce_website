@@ -123,43 +123,16 @@ body {
   font-size: 4rem;
 }
 
-.contact .contactrow{
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  padding: 2rem 0;
-  padding-bottom: 3rem;
-}
-
-.contactgrid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 90px;
-  max-width: 1200px;
-  margin: 25px auto;
-}
-
-.contactart img, .featured img{
-  width: 100%;
-  border: 5px solid;
-  border-radius: 10px;
-}
-
-.contactart p, .contactart h3 {
-  margin: 20px;
-}
-
 .contactart .fa {
   padding: 10px;
   margin: auto 0rem 1rem 1rem;
   margin-top: 1rem;
   font-size: 1.5rem;
-  width: 40px;
+  width: auto;
 }
 
 .contactart .fa-linkedin {
-  background: #4267B2;
+  background: #0072b1;
   color: #ffffff;
 }
 
@@ -173,14 +146,6 @@ body {
   color: #ffffff;
 }
 
-.featured {
-  align-items: center;
-  grid-column: span 3;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  padding: 25px, 15px;
-}
 /**footer css **/
 .icons-container{
   background-color: #eee;
@@ -214,7 +179,6 @@ padding:10px 0;
 
 .info{
   width:25%;
-  display: inline-block;
   float: left;
   padding: 10px;
   align-items: center;
@@ -258,13 +222,13 @@ padding:10px 0;
   }
   .info{
     width:25%;
-    display: inline-block;
     float: left;
     padding: 10px;
     align-items: center;
     vertical-align: middle;
   }
 }
+
 @media(max-width: 767px){
   .icons-container{
     background-color: #eee;
@@ -290,12 +254,13 @@ padding:10px 0;
   }
   .info{
     width:100%;
-    display: inline-block;
     float: left;
     padding: 10px;
     align-items: center;
     vertical-align: middle;
   }
+}
+
 .mt-n1 {
 margin-top: -0.25rem !important;
 }
@@ -307,15 +272,4 @@ margin-top: -1rem !important;
 }
 .mt-n4 {
 margin-top: -1.5rem !important;
-}
-
-.about p{
-  text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.about h2{
-  text-align: center;
-  padding: 2rem;
 }

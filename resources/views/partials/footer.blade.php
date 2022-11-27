@@ -42,8 +42,8 @@
 
     <div class=footer_col2_row2>
         <a href="https://linkedin.com/in/pure-foodsltd"><img src = "{{asset('images/in.png')}}" width="40px"></a>
-        <a href="https://www.instagram.com/purefoods.ltd/"><img src = "{{asset('images/tw.png')}}" width="40px"></a>
-        <a href="https://twitter.com/PureFoods_ltd"><img src = "{{asset('images/is.png')}}" width="40px"></a>
+        <a href="https://www.instagram.com/purefoods.ltd/"><img src = "{{asset('images/is.png')}}" width="40px"></a>
+        <a href="https://twitter.com/PureFoods_ltd"><img src = "{{asset('images/tw.png')}}" width="40px"></a>
 
     </div><!--footer_col2_row2-->
 </div><!--footer_col2-->
