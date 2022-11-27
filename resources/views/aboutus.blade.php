@@ -37,7 +37,8 @@
         <p>Considering the big issues regarding the climate, one of our main goals is to ensure sustainable shopping to help tackle the global crisis<br>
         which includes helping to reduce carbon emissions and discouraging the use of plastic bags.<br>
 
-        <p>Another form of action we have taken includes the purchasing of Fairtrade products. <br>We want to give back to our communities all around the work by using schemes that will benefit both them and us.</p><br><br>
+        <p>Another form of action we have taken includes the purchasing of Fairtrade products. <br>We want to give back to our communities all around the work by using schemes that will benefit both them and us.</p><br>
+        through sustainable and impartial trade relationships.</p>
 
     </div>
 </div>
